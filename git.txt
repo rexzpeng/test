@@ -1,0 +1,80 @@
+# git基本操作
+
+进入到某个文件夹
+
+get clone 项目地址 可以将文件克隆下来
+
+![image-20200720175237325](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200720175237325.png)
+
+上传文件：
+
+1. 进入到文件加 git init  新建git仓库
+2. git add .    git status可以查看
+
+3. git commit -m "你的说明注释"
+4. git remote add origin 你的仓库地址	//连接仓库
+5. 如果你的远程仓库有README.md文件，请执行命令：git pull --rebase origin master
+6. git push -u origin master
+
+```
+$ git pull origin master //将远程仓库里面的项目拉下来。
+$ dir 
+```
+
+# git commit 命名规范
+
+样式修改	style(*这里写修改的文件):这里写描述
+
+1. type。type 是用于说明该 commit 的类型的，一般我们会规定 type 的类型如下：
+
+- feat: 新功能(feature)						        feat( file ):增加什么功能
+
+- fix: 修复 bug                                              fix( file : 2215 ):修改bug
+
+- docs: 文档(documents)
+
+- style: 代码格式(不影响代码运行的格式变动，注意不是指 CSS 的修改)         style( file ):修改什么样式
+
+- refactor: 重构(既不是新增功能，也不是修改 bug 的代码变动)
+
+- test: 提交测试代码(单元测试，集成测试等)
+
+- chore: 构建或辅助工具的变动
+
+  2. scope：说明 commit 影响的范围，比如数据层，控制层，视图层等等，这个需要视具体场景与项目的不同而灵活变动
+
+  3. subject：是对于该 commit 目的的简短描述
+
+https://segmentfault.com/a/1190000017205604
+
+# git分支创建和切换
+
+git branch	查看本地分支 	-r 远程分支 	-a 所有分支
+
+git fetch -p 清除分支
+
+git checkout -b name 	根据当前分支创建某一个分支，并切换到创建的分支（多用这个，想在哪个分支下创建，只需要先进入到那个分支）
+
+git checkout name 进入某一个分支
+
+git branch -d name	删除某个分支
+
+git branch 	name	 master 		创建一个叫做name的分支，从某个分支下面创建
+
+第一个参数是需要创建的名字，第二个参数是从那个分支目录下创建（意思就是拷贝哪一个分支目录，可以是本地，也可以是远程，远程分支需要加 origin/分支名字）
+
+git merge name	将name分支合并到当前分支上
+
+
+
+Master	主分支
+
+Hotfix	修改主分支上的bug
+
+Release	为准备发布做准备
+
+Develop	开发新功能分支（和主分支并行）
+
+Feature	具体功能分支
+
+https://juejin.im/post/6869519303864123399?utm_source=gold_browser_extension
